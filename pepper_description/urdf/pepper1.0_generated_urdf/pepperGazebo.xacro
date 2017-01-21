@@ -723,14 +723,18 @@
       </plugin>
     </gazebo>-->
     <!--Documentation at https://github.com/ros-simulation/gazebo_ros_pkgs/blob/indigo-devel/gazebo_plugins/src/gazebo_ros_planar_move.cpp-->
-    <gazebo>
-        <plugin name="base_drive_controller" filename="libgazebo_ros_planar_move.so">
+<!--     <gazebo>
+        <plugin name="base_drive_controller" filename="libgazebo_ros_force_based_move.so">
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
+            <publishOdometryTf>true</publishOdometryTf>
             <odometryFrame>odom</odometryFrame>
             <odometryRate>20.0</odometryRate>
             <robotBaseFrame>Tibia</robotBaseFrame>
+            <yaw_velocity_p_gain>1.0</yaw_velocity_p_gain>
+            <x_velocity_p_gain>1.0</x_velocity_p_gain>
+            <y_velocity_p_gain>1.0</y_velocity_p_gain>
         </plugin>
-    </gazebo>
+    </gazebo> -->
 </robot>
 
