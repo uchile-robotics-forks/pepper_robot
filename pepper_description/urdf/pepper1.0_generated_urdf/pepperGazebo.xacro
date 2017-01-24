@@ -703,16 +703,22 @@
     </gazebo>-->
     <!--Documentation at https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/blob/indigo-devel/hector_gazebo_plugins/src/gazebo_ros_force_based_move.cpp -->
     <gazebo>
-        <plugin name="base_drive_controller" filename="libgazebo_ros_force_based_move.so">
+        <plugin name="base_drive_controller" filename="libpepper_gazebo_ros_force_omni_base.so">
+            <robotNamespace>pepper_robot</robotNamespace>
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <publishOdometryTf>true</publishOdometryTf>
             <odometryFrame>odom</odometryFrame>
             <odometryRate>20.0</odometryRate>
             <robotBaseFrame>Tibia</robotBaseFrame>
-            <yaw_velocity_p_gain>10.0</yaw_velocity_p_gain>
-            <x_velocity_p_gain>40.0</x_velocity_p_gain>
-            <y_velocity_p_gain>40.0</y_velocity_p_gain>
+            <yaw_velocity_p_gain>500.0</yaw_velocity_p_gain>
+            <yaw_velocity_i_gain>300.0</yaw_velocity_i_gain>
+            <x_velocity_p_gain>1000.0</x_velocity_p_gain>
+            <x_velocity_i_gain>300.0</x_velocity_i_gain>
+            <y_velocity_p_gain>1000.0</y_velocity_p_gain>
+            <y_velocity_i_gain>300.0</y_velocity_i_gain>
+            <max_torque>8.0</max_torque>
+            <max_force>50.0</max_force>
         </plugin>
     </gazebo>
 </robot>
