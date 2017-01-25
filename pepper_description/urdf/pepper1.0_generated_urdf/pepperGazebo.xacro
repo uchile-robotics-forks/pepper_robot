@@ -685,7 +685,7 @@
 -->
     <!-- Drive controller -->
     <!--Original drive controller from Aldebaran-->
-<!--    <gazebo>
+<!--<gazebo>
       <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>100</updateRate>
@@ -700,8 +700,9 @@
         <odometryFrame>odom</odometryFrame>
         <robotBaseFrame>base_footprint</robotBaseFrame>
       </plugin>
-    </gazebo>-->
-    <!--Documentation at https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/blob/indigo-devel/hector_gazebo_plugins/src/gazebo_ros_force_based_move.cpp -->
+    </gazebo>
+-->
+    <!-- Custom base plugin Documentation at https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/blob/indigo-devel/hector_gazebo_plugins/src/gazebo_ros_force_based_move.cpp -->
     <gazebo>
         <plugin name="base_drive_controller" filename="libpepper_gazebo_ros_force_omni_base.so">
             <robotNamespace>pepper_robot</robotNamespace>
@@ -720,6 +721,100 @@
             <max_torque>8.0</max_torque>
             <max_force>50.0</max_force>
         </plugin>
+    </gazebo>
+    <!-- Lasers sensors -->
+    <gazebo reference="base_footprint">
+      <sensor type="ray" name="laser_sensor_right">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>15</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.0944</min_angle>
+              <max_angle>-1.0644</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.10</min>
+            <max>1.5</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser_sensor_right_plugin" filename="libgazebo_ros_laser.so">
+          <topicName>/pepper_robot/laser/right</topicName>
+          <frameName>base_footprint</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+    <gazebo reference="base_footprint">
+      <sensor type="ray" name="laser_sensor_left">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>15</samples>
+              <resolution>1</resolution>
+              <min_angle>2.0944</min_angle>
+              <max_angle>1.0644</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.10</min>
+            <max>1.5</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser_sensor_left_plugin" filename="libgazebo_ros_laser.so">
+          <topicName>/pepper_robot/laser/left</topicName>
+          <frameName>base_footprint</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+    <gazebo reference="base_footprint">
+      <sensor type="ray" name="laser_sensor_front">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>15</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.515</min_angle>
+              <max_angle>0.515</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.10</min>
+            <max>1.5</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser_sensor_front_plugin" filename="libgazebo_ros_laser.so">
+          <topicName>/pepper_robot/laser/front</topicName>
+          <frameName>base_footprint</frameName>
+        </plugin>
+      </sensor>
     </gazebo>
 </robot>
 
