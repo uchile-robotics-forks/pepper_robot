@@ -723,7 +723,7 @@
         </plugin>
     </gazebo>
     <!-- Lasers sensors -->
-    <gazebo reference="base_footprint">
+    <gazebo reference="SurroundingRightLaser_device_frame">
       <sensor type="ray" name="laser_sensor_right">
         <pose>0 0 0 0 0 0</pose>
         <visualize>false</visualize>
@@ -733,8 +733,8 @@
             <horizontal>
               <samples>15</samples>
               <resolution>1</resolution>
-              <min_angle>-2.0944</min_angle>
-              <max_angle>-1.0644</max_angle>
+              <min_angle>-0.515</min_angle>
+              <max_angle>0.515</max_angle>
             </horizontal>
           </scan>
           <range>
@@ -750,11 +750,11 @@
         </ray>
         <plugin name="gazebo_ros_laser_sensor_right_plugin" filename="libgazebo_ros_laser.so">
           <topicName>/pepper_robot/laser/right</topicName>
-          <frameName>base_footprint</frameName>
+          <frameName>SurroundingRightLaser_device_frame</frameName>
         </plugin>
       </sensor>
     </gazebo>
-    <gazebo reference="base_footprint">
+    <gazebo reference="SurroundingLeftLaser_device_frame">
       <sensor type="ray" name="laser_sensor_left">
         <pose>0 0 0 0 0 0</pose>
         <visualize>false</visualize>
@@ -764,8 +764,8 @@
             <horizontal>
               <samples>15</samples>
               <resolution>1</resolution>
-              <min_angle>2.0944</min_angle>
-              <max_angle>1.0644</max_angle>
+              <min_angle>-0.515</min_angle>
+              <max_angle>0.515</max_angle>
             </horizontal>
           </scan>
           <range>
@@ -781,11 +781,11 @@
         </ray>
         <plugin name="gazebo_ros_laser_sensor_left_plugin" filename="libgazebo_ros_laser.so">
           <topicName>/pepper_robot/laser/left</topicName>
-          <frameName>base_footprint</frameName>
+          <frameName>SurroundingLeftLaser_device_frame</frameName>
         </plugin>
       </sensor>
     </gazebo>
-    <gazebo reference="base_footprint">
+    <gazebo reference="SurroundingFrontLaser_device_frame">
       <sensor type="ray" name="laser_sensor_front">
         <pose>0 0 0 0 0 0</pose>
         <visualize>false</visualize>
@@ -812,7 +812,7 @@
         </ray>
         <plugin name="gazebo_ros_laser_sensor_front_plugin" filename="libgazebo_ros_laser.so">
           <topicName>/pepper_robot/laser/front</topicName>
-          <frameName>base_footprint</frameName>
+          <frameName>SurroundingFrontLaser_device_frame</frameName>
         </plugin>
       </sensor>
     </gazebo>
