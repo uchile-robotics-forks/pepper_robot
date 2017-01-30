@@ -3,68 +3,68 @@
     <!-- MACROS FOR DISABLE LINKS -->
 	<xacro:property name="PI" value="3.14159265359" />
     <xacro:macro name="DisabledLinks" params="side side_small">
-        <plugin name="${side}Finger11_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger11_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger11_link</link>
         </plugin>
-        <plugin name="${side}Finger12_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger12_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger12_link</link>
         </plugin>
-        <plugin name="${side}Finger13_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger13_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger13_link</link>
         </plugin>
-        <plugin name="${side}Finger21_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger21_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger21_link</link>
         </plugin>
-        <plugin name="${side}Finger22_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger22_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger22_link</link>
         </plugin>
-        <plugin name="${side}Finger23_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger23_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger23_link</link>
         </plugin>
-        <plugin name="${side}Finger31_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger31_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger31_link</link>
         </plugin>
-        <plugin name="${side}Finger32_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger32_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger32_link</link>
         </plugin>
-        <plugin name="${side}Finger33_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger33_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger33_link</link>
         </plugin>
-        <plugin name="${side}Finger41_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger41_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger41_link</link>
         </plugin>
-        <plugin name="${side}Finger42_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger42_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger42_link</link>
         </plugin>
-        <plugin name="${side}Finger43_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Finger43_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger43_link</link>
         </plugin>
-        <plugin name="${side}Thumb1_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Thumb1_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Thumb1_link</link>
         </plugin>
-        <plugin name="${side}Thumb2_link" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side}Thumb2_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Thumb2_link</link>
         </plugin> 
-        <plugin name="${side_small}_gripper" filename="libroboticsgroup_gazebo_disable_link_plugin.so">
+        <plugin name="${side_small}_gripper" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side_small}_gripper</link>
         </plugin>
     </xacro:macro> 
     <!-- MACROS FOR MIMIC JOINTS -->
     <!-- Fingers -->
     <xacro:macro name="FingerMimics" params="side num">
-        <plugin name="mimic_${side}Finger${num}1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <plugin name="mimic_${side}Finger${num}1" filename="libpepper_gazebo_mimic_joint_plugin.so">
             <joint>${side}Hand</joint>
             <mimicJoint>${side}Finger${num}1</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
-        <plugin name="mimic_${side}Finger${num}2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <plugin name="mimic_${side}Finger${num}2" filename="libpepper_gazebo_mimic_joint_plugin.so">
             <joint>${side}Hand</joint>
             <mimicJoint>${side}Finger${num}2</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
-        <plugin name="mimic_${side}Finger${num}3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <plugin name="mimic_${side}Finger${num}3" filename="libpepper_gazebo_mimic_joint_plugin.so">
             <joint>${side}Hand</joint>
             <mimicJoint>${side}Finger${num}3</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
@@ -73,13 +73,13 @@
     </xacro:macro> 
     <!-- Thumbs -->
     <xacro:macro name="ThumbMimics" params="side">
-        <plugin name="${side}Thumb1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <plugin name="${side}Thumb1" filename="libpepper_gazebo_mimic_joint_plugin.so">
             <joint>${side}Hand</joint>
             <mimicJoint>${side}Thumb1</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
             <offset>${PI/4}</offset>
         </plugin>
-        <plugin name="${side}Thumb2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <plugin name="${side}Thumb2" filename="libpepper_gazebo_mimic_joint_plugin.so">
             <joint>${side}Hand</joint>
             <mimicJoint>${side}Thumb2</mimicJoint>
             <multiplier>-${PI/4}</multiplier>
