@@ -91,7 +91,7 @@
     <gazebo>
 
         <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
-            <robotNamespace></robotNamespace>
+            <robotNamespace>pepper_dcm</robotNamespace>
             <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </plugin>
 
