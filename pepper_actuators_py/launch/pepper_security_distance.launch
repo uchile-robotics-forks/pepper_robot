@@ -1,0 +1,13 @@
+<launch>
+  <env name="PYTHONPATH" value="$(env PYTHONPATH)" />
+  <arg name="nao_ip" default="$(optenv NAO_IP 127.0.0.1)" />
+  <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+  <arg name="orth_dist" default="0.20" />
+  <arg name="tang_dist" default="0.20" />
+
+
+  <node pkg="pepper_actuators_py" type="security_distance.py" name="pepper_security_distance"  args="--pip=$(arg nao_ip) --pport=$(arg nao_port) " output="screen">
+       <param name="orth_dist" value="$(arg orth_dist)" />
+       <param name="tang_dist" value="$(arg tang_dist)" />
+   </node>
+</launch>

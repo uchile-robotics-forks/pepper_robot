@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(pepper_sensors_py)
+project(pepper_actuators_py)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -21,7 +21,8 @@ catkin_package()
 ## Install ##
 #############
 
-catkin_install_python(PROGRAMS nodes/camera.py nodes/laser.py nodes/people_perception.py nodes/position.py nodes/pepper_speechrec.py
+catkin_install_python(PROGRAMS nodes/naoqi_tts.py nodes/people_follow.py nodes/move_to.py
+                               nodes/force_driving_pose.py nodes/wakeup.py nodes/animation_player.py nodes/security_distance.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 ## Mark cpp header files for installation
@@ -30,7 +31,3 @@ install(DIRECTORY launch
    FILES_MATCHING PATTERN "*.launch"
 )
 
-install(DIRECTORY share
-   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-   FILES_MATCHING PATTERN "*.yaml"
-)

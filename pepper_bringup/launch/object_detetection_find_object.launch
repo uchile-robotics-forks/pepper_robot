@@ -1,0 +1,24 @@
+<launch>
+    <node name="find_object_3d" pkg="find_object_2d" type="find_object_2d" output="screen">
+        <param name="gui" value="true" type="bool"/>
+        <param name="settings_path" value="~/.ros/find_object_2d.ini" type="str"/>
+        <param name="subscribe_depth" value="true" type="bool"/>
+        <param name="objects_path" value="" type="str"/>
+        <param name="object_prefix" value="object" type="str"/>
+
+        <!-- This is confirmed to be working on real robot and similaton -->
+        <remap from="rgb/image_rect_color" to="/pepper_robot/camera/front/camera/image_raw"/>
+        <remap from="depth_registered/image_raw" to="/pepper_robot/camera/depth/camera/image_raw"/>
+        <remap from="depth_registered/camera_info" to="/pepper_robot/camera/depth/camera/camera_info"/>
+
+        <!-- <remap from="rgb/image_rect_color" to="/pepper_robot/camera/front/camera/image_raw"/>
+        <remap from="depth_registered/image_raw" to="/pepper_robot/camera/depth/camera/image_raw"/>
+        <remap from="depth_registered/camera_info" to="/pepper_robot/camera/depth/camera_info"/> -->
+    </node>
+
+    <!-- Example of tf synchronisation with the objectsStamped message -->
+    <!--<node name="tf_example" pkg="find_object_2d" type="tf_example" output="screen">-->
+    <!--<param name="map_frame_id" value="/map" type="string"/>-->
+    <!--<param name="object_prefix" value="object" type="str"/>-->
+    <!--</node>-->
+</launch>

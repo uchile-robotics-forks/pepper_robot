@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>pepper_actuators_py</name>
+  <version>0.1.10</version>
+  <description>The pepper_actuators package</description>
+
+  <author>Luca Lach</author>
+  <maintainer email="llach@techfak.uni-bielefeld.de">llach</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>roslaunch</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+</package>

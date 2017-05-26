@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen" respawn="true" respawn_delay="5">
+     <param name="destination_frame" value="/laser_virtual"/>
+	 <param name="cloud_destination_topic" value="/laser/cloud_merged"/>
+	 <param name="scan_destination_topic" value="/laser/scan_merged"/>
+     <param name="laserscan_topics" value ="/laser/srd_front/scan /laser/srd_right/scan /laser/srd_left/scan /depth_to_laser/scan" />
+  </node>
+</launch>

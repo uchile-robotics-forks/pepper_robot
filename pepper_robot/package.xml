@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>pepper_robot</name>
+  <name>pepper_robot</name> 
   <version>0.1.10</version>
   <description>The pepper_robot package</description>
 

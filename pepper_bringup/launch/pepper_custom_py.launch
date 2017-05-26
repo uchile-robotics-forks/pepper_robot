@@ -1,0 +1,152 @@
+<launch>
+
+    <!-- flier: BE ADVISED: 1) Differences between the REAL and SIMULATED ROBOT are ONLY made here IN THIS FILE.
+         There will be no 'if sim' in any other file, because it will exponentially increase the debugging
+         difficulty. 2) If you edit this file. THINK before commit & push. -->
+
+    <!-- The environment for the pepper simulation is a hybrid of Pepper 'default' naoqi sensors and
+         sensors that are provided via MORSE, thus we need to have two different basic setups
+         the first group contains the environment for the REAL ROBOT, the second group below defines
+         the environment for the simulator. One of the main differences is use_sim_time -->
+
+    <arg name="nao_ip" default="$(optenv NAO_IP 127.0.0.1)"/>
+    <arg name="nao_port" default="$(optenv NAO_PORT 9559)"/>
+    <arg name="namespace" default="pepper_robot"/>
+    <arg name="pepper_sim_on" default="false"/>
+
+    <!-- Use CPP node by default for Pepper sensors -->
+    <arg name="force_python" default="true"/>
+    <include file="$(find pepper_description)/launch/pepper_publisher.launch"/>
+
+    <!-- NAO driver works for pepper -->
+    <include file="$(find naoqi_driver_py)/launch/naoqi_driver.launch">
+        <arg name="nao_ip" value="$(arg nao_ip)"/>
+    </include>
+
+    <!-- This group is started if REAL ROBOT MODE is ON -->
+    <group unless="$(arg pepper_sim_on)">
+        <!-- flier: DO NOT CHANGE THIS VALUE BEFORE CONSULTING THE TEAM -->
+        <param name="/use_sim_time" value="false"/>
+
+        <!-- flier: This is required for NAV-Goal targets -->
+        <!-- flier: DO NOT CHANGE THESE VALUES BEFORE CONSULTING THE TEAM -->
+        <node pkg="tf" type="static_transform_publisher" name="basefootprint_to_tibia"
+              args="0 0 -0.331 0 0 0 1 Tibia base_footprint 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="baselink_to_torso"
+              args="0 0 0 0 0 0 1 base_link torso 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser_virtual"
+              args=" 0 0 0.035 0 0 0 base_footprint laser_virtual 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="camera_depth_to_head"
+              args="0.0513 0.039 0.119 0.0 0 0 1 Head CameraDepth_frame 25"/>
+
+
+        <include file="$(find pepper_sensors_py)/launch/laser.launch">
+            <arg name="nao_ip" value="$(arg nao_ip)"/>
+        </include>
+
+        <!-- http://doc.aldebaran.com/2-4/family/pepper_technical/video_3D_pep.html -->
+        <include file="$(find pepper_sensors_py)/launch/camera_depth.launch" ns="$(arg namespace)/camera/depth">
+            <arg name="ns" value="$(arg namespace)/camera/depth"/>
+            <arg name="nao_ip" value="$(arg nao_ip)"/>
+            <arg name="source" value="2"/>
+            <arg name="color_space" value="23"/>
+            <arg name="frame_rate" value="15"/>
+            <arg name="resolution" value="1"/>
+        </include>
+
+        <!-- http://doc.aldebaran.com/2-4/family/pepper_technical/video_pep.html -->
+        <include file="$(find pepper_sensors_py)/launch/camera_front.launch" ns="$(arg namespace)/camera/front">
+            <arg name="ns" value="$(arg namespace)/camera/front"/>
+            <arg name="nao_ip" value="$(arg nao_ip)"/>
+            <arg name="source" value="0"/>
+            <arg name="color_space" value="9"/>
+            <arg name="frame_rate" value="20"/>
+            <arg name="resolution" value="2"/>
+            <arg name="convert_yuv422" value="True"/>
+            <arg name="calibration_file_top"
+                 value="file://$(find pepper_sensors_py)/share/nao_camera_top_640x480.yaml"/>
+        </include>
+
+        <!-- <include file="$(find pepper_sensors_py)/launch/camera_bottom.launch" ns="$(arg namespace)/camera/bottom" >
+          <arg name="ns" value="$(arg namespace)/camera/bottom" />
+          <arg name="nao_ip" value="$(arg nao_ip)" />
+          <arg name="source" value="1" />
+          <arg name="color_space" value="9" />
+          <arg name="frame_rate" value="10" />
+          <arg name="resolution" value="2" />
+          <arg name="convert_yuv422" value="True" />
+          <arg name="calibration_file_bottom" value="file://$(find pepper_sensors_py)/share/nao_camera_bottom_640x480.yaml" />
+        </include> -->
+
+        <!-- See: http://doc.aldebaran.com/2-0/family/juliette_technical/video_3D_juliette.html#d-camera-juliette -->
+        <node pkg="nodelet" type="nodelet" name="standalone_nodelet" args="manager"/>
+        <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan_loader"
+              args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet standalone_nodelet">
+            <remap from="image" to="/pepper_robot/camera/depth/camera/image_raw"/>
+            <param name="scan_height" value="5"/>
+            <param name="output_frame_id" value="/laser_virtual"/>
+            <param name="range_min" value="0.8"/>
+            <param name="range_max" value="5.0"/>
+            <remap from="scan" to="/depth_to_laser/scan"/>
+        </node>
+
+        <!-- register pointcloud and rgb it -->
+        <include file="$(find pepper_bringup)/launch/pointcloud.launch"/>
+
+        <!-- launch pose manager -->
+        <include file="$(find naoqi_pose)/launch/pose_manager.launch" ns="$(arg namespace)/pose">
+            <arg name="nao_ip" value="$(arg nao_ip)"/>
+        </include>
+    </group>
+
+    <!-- ____________________________________SIM STARTS HERE_______________________________________________________  -->
+
+    <!-- This group is started if SIMULATION mode is ON -->
+    <group if="$(arg pepper_sim_on)">
+        <!-- flier: DO NOT CHANGE THIS VALUE BEFORE CONSULTING THE TEAM -->
+        <param name="/use_sim_time" value="true"/>
+
+        <!-- flier: This is required for NAV-Goal targets -->
+        <!-- flier: DO NOT CHANGE THESE VALUES BEFORE CONSULTING THE TEAM -->
+        <node pkg="tf" type="static_transform_publisher" name="basefootprint_to_tibia"
+              args="0 0 -0.331 0 0 0 1 Tibia base_footprint 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="baselink_to_torso"
+              args="0 0 0 0 0 0 1 base_link torso 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser_virtual"
+              args=" 0 0 0.035 0 0 0 base_footprint laser_virtual 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="camera_depth_to_head"
+              args="0.0513 0.039 0.119 0.0 0 0 1 Head CameraDepth_frame 25"/>
+
+        <!-- See: http://doc.aldebaran.com/2-0/family/juliette_technical/video_3D_juliette.html#d-camera-juliette -->
+        <node pkg="nodelet" type="nodelet" name="standalone_nodelet" args="manager"/>
+        <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan_loader"
+              args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet standalone_nodelet">
+            <remap from="image" to="/pepper_robot/camera/depth/camera/image_raw"/>
+            <param name="scan_height" value="5"/>
+            <param name="output_frame_id" value="/laser_virtual"/>
+            <param name="range_min" value="0.8"/>
+            <param name="range_max" value="5.0"/>
+            <remap from="scan" to="/depth_to_laser/scan"/>
+        </node>
+
+        <!-- register pointcloud and rgb it -->
+        <include file="$(find pepper_bringup)/launch/pointcloud.launch"/>
+
+        <!-- launch pose manager -->
+        <include file="$(find naoqi_pose)/launch/pose_manager.launch" ns="$(arg namespace)/pose">
+            <arg name="nao_ip" value="$(arg nao_ip)"/>
+        </include>
+
+        <!-- In order to SIMULATE sensors we need to establish a 'few' static transforms -->
+        <node pkg="tf" type="static_transform_publisher" name="cam_top_to_head"
+              args="0.08 0 0.162 0 0 0 1 Head CameraTop_frame 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="srd_front_to_tibia"
+              args="0.018 0 -0.334 0 0 0 1 Tibia SurroundingFrontLaser_frame 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="srd_left_to_tibia"
+              args="-0.018 0.089 -0.334 0 0 0.769 0.638 Tibia SurroundingLeftLaser_frame 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="srd_right_to_tibia"
+              args="-0.018 -0.089 -0.334 0 0 -0.769 0.638 Tibia SurroundingRightLaser_frame 25"/>
+        <node pkg="tf" type="static_transform_publisher" name="shovel_to_tibia"
+              args="0.056 0.0 -0.069 0.0 0.173 0 1 Tibia ShovelLaser_frame 25"/>
+    </group>
+</launch>
