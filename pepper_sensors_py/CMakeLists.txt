@@ -21,16 +21,11 @@ catkin_package()
 ## Install ##
 #############
 
-catkin_install_python(PROGRAMS nodes/camera.py nodes/laser.py nodes/people_perception.py nodes/position.py nodes/pepper_speechrec.py
+catkin_install_python(PROGRAMS nodes/camera.py nodes/laser.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 ## Mark cpp header files for installation
 install(DIRECTORY launch
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
    FILES_MATCHING PATTERN "*.launch"
-)
-
-install(DIRECTORY share
-   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-   FILES_MATCHING PATTERN "*.yaml"
 )
