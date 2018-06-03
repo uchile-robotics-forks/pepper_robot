@@ -8,12 +8,10 @@
   <arg name="debug" default="false" />
   <arg name="num_worker_threads" default="4" />
 
-  <arg name="depth_registration" default="true" />
+  <arg name="depth_registration" default="false" />
   <arg name="depth_registered" default="depth_registered" />
-  <arg name="hw_registered_processing"        default="true" />
-  <arg name="sw_registered_processing"        default="true" />
-
-  <!-- if depth_registration is set to false, publish pointcloud without rgb instead -->
+  <arg name="hw_registered_processing"        default="true" />  
+  <arg name="sw_registered_processing"        default="true" /> <!--if depth_registration is set to false, publish pointcloud without rgb instead -->
   <arg name="points_xyz" value="false" if="$(arg depth_registration)" />
   <arg name="points_xyz" value="true"  unless="$(arg depth_registration)" />
 
@@ -42,23 +40,23 @@
       <arg name="debayer_processing" value="false" />
     </include>
 
-    <!-- ir camera -->
+    <include file="$(find rgbd_launch)/launch/includes/depth.launch.xml">
+      <arg name="depth" value="depth" />
+      <arg name="manager" value="$(arg manager)" />
+      <arg name="rectify" value="false" />
+      <arg name="respawn" value="$(arg respawn)" />
+      <arg name="points_xyz" value="$(arg points_xyz)" />
+    </include>
+    
+    <!-- ir camera  -->
+
     <include file="$(find rgbd_launch)/launch/includes/ir.launch.xml">
       <arg name="ir" value="ir" />
       <arg name="manager" value="$(arg manager)" />
       <arg name="respawn" value="$(arg respawn)" />
     </include>
 
-    <!-- depth camera -->
-    <include file="$(find rgbd_launch)/launch/includes/depth.launch.xml">
-      <arg name="depth" value="depth" />
-      <arg name="manager" value="$(arg manager)" />
-      <arg name="rectify" value="true" />
-      <arg name="respawn" value="$(arg respawn)" />
-      <arg name="points_xyz" value="$(arg points_xyz)" />
-    </include>
-
-    <!-- depth registration -->
+<!--      depth camera      depth registration --> 
     <include file="$(find rgbd_launch)/launch/includes/depth_registered.launch.xml"
              if="$(arg depth_registration)">
       <arg name="manager" value="$(arg manager)" />
@@ -69,6 +67,5 @@
       <arg name="hw_registered_processing" value="$(arg hw_registered_processing)" />
       <arg name="sw_registered_processing" value="$(arg sw_registered_processing)" />
     </include>
-
   </group>
 </launch>
