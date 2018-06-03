@@ -7,7 +7,6 @@
   <arg name="network_interface"   default="wlan0" />
 
   <arg name="namespace"           default="pepper_robot" />
-  <arg name="output"              default="log" />
 
   <arg name="output"              default="log"/> <!-- {log, screen} -->
 
