@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!-- MACROS FOR DISABLE LINKS -->
 	<xacro:property name="PI" value="3.14159265359" />
+    <xacro:property name="robot_namespace" value="/maqui" />
     <xacro:macro name="DisabledLinks" params="side side_small">
         <plugin name="${side}Finger11_link" filename="libpepper_gazebo_disable_link_plugin.so">
             <link>${side}Finger11_link</link>
@@ -91,7 +92,7 @@
     <gazebo>
 
         <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
-            <robotNamespace>pepper_dcm</robotNamespace>
+            <robotNamespace>${robot_namespace}</robotNamespace>
             <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </plugin>
 
@@ -467,7 +468,7 @@
             </noise>
         </camera>
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-            <robotNamespace>/pepper_robot</robotNamespace>
+            <robotNamespace>${robot_namespace}</robotNamespace>
             <alwaysOn>true</alwaysOn>
             <updateRate>5.0</updateRate>
             <cameraName>camera/front</cameraName>
@@ -505,7 +506,7 @@
             </noise>
         </camera>
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-            <robotNamespace>/pepper_robot</robotNamespace>
+            <robotNamespace>${robot_namespace}</robotNamespace>
             <alwaysOn>true</alwaysOn>
             <updateRate>5.0</updateRate>
             <cameraName>camera/bottom</cameraName>
@@ -541,7 +542,7 @@
         <plugin name="CameraDepth_frame_controller" filename="libgazebo_ros_openni_kinect.so">
           <alwaysOn>true</alwaysOn>
           <updateRate>20.0</updateRate>
-          <cameraName>pepper_robot/camera</cameraName>
+          <cameraName>${robot_namespace}/camera</cameraName>
           <imageTopicName>ir/image_raw</imageTopicName>
           <cameraInfoTopicName>depth/camera_info</cameraInfoTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
@@ -665,7 +666,7 @@
       </range>
     </ray>
     <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-      <robotNamespace>/pepper_robot</robotNamespace>
+      <robotNamespace>${robot_namespace}</robotNamespace>
       <gaussianNoise>0.05</gaussianNoise>
       <alwaysOn>true</alwaysOn>
       <updateRate>20</updateRate>
@@ -706,7 +707,7 @@
       </range>
     </ray>
     <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-      <robotNamespace>/pepper_robot</robotNamespace>
+      <robotNamespace>${robot_namespace}</robotNamespace>
       <gaussianNoise>0.05</gaussianNoise>
       <alwaysOn>true</alwaysOn>
       <updateRate>20</updateRate>
@@ -742,7 +743,7 @@
     <!-- Custom base plugin Documentation at https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/blob/indigo-devel/hector_gazebo_plugins/src/gazebo_ros_force_based_move.cpp -->
     <gazebo>
         <plugin name="base_drive_controller" filename="libpepper_gazebo_ros_force_omni_base.so">
-            <robotNamespace>pepper_robot</robotNamespace>
+            <robotNamespace>${robot_namespace}</robotNamespace>
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <publishOdometryTf>true</publishOdometryTf>
@@ -786,7 +787,7 @@
           </noise>
         </ray>
         <plugin name="gazebo_ros_laser_sensor_right_plugin" filename="libgazebo_ros_laser.so">
-          <topicName>/pepper_robot/laser/right</topicName>
+          <topicName>${robot_namespace}/laser/right</topicName>
           <frameName>SurroundingRightLaser_device_frame</frameName>
         </plugin>
       </sensor>
@@ -817,7 +818,7 @@
           </noise>
         </ray>
         <plugin name="gazebo_ros_laser_sensor_left_plugin" filename="libgazebo_ros_laser.so">
-          <topicName>/pepper_robot/laser/left</topicName>
+          <topicName>${robot_namespace}/laser/left</topicName>
           <frameName>SurroundingLeftLaser_device_frame</frameName>
         </plugin>
       </sensor>
@@ -848,7 +849,7 @@
           </noise>
         </ray>
         <plugin name="gazebo_ros_laser_sensor_front_plugin" filename="libgazebo_ros_laser.so">
-          <topicName>/pepper_robot/laser/front</topicName>
+          <topicName>${robot_namespace}/laser/front</topicName>
           <frameName>SurroundingFrontLaser_device_frame</frameName>
         </plugin>
       </sensor>

@@ -1461,265 +1461,265 @@
   <!-- GAZEBO ROS CONTROL -->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
-      <robotNamespace/>
+      <robotNamespace>/maqui</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger11">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger11">
       <joint>LHand</joint>
       <mimicJoint>LFinger11</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger12">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger12">
       <joint>LHand</joint>
       <mimicJoint>LFinger12</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger13">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger13">
       <joint>LHand</joint>
       <mimicJoint>LFinger13</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger21">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger21">
       <joint>LHand</joint>
       <mimicJoint>LFinger21</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger22">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger22">
       <joint>LHand</joint>
       <mimicJoint>LFinger22</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger23">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger23">
       <joint>LHand</joint>
       <mimicJoint>LFinger23</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger31">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger31">
       <joint>LHand</joint>
       <mimicJoint>LFinger31</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger32">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger32">
       <joint>LHand</joint>
       <mimicJoint>LFinger32</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger33">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger33">
       <joint>LHand</joint>
       <mimicJoint>LFinger33</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger41">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger41">
       <joint>LHand</joint>
       <mimicJoint>LFinger41</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger42">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger42">
       <joint>LHand</joint>
       <mimicJoint>LFinger42</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_LFinger43">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_LFinger43">
       <joint>LHand</joint>
       <mimicJoint>LFinger43</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger11">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger11">
       <joint>RHand</joint>
       <mimicJoint>RFinger11</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger12">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger12">
       <joint>RHand</joint>
       <mimicJoint>RFinger12</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger13">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger13">
       <joint>RHand</joint>
       <mimicJoint>RFinger13</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger21">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger21">
       <joint>RHand</joint>
       <mimicJoint>RFinger21</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger22">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger22">
       <joint>RHand</joint>
       <mimicJoint>RFinger22</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger23">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger23">
       <joint>RHand</joint>
       <mimicJoint>RFinger23</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger31">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger31">
       <joint>RHand</joint>
       <mimicJoint>RFinger31</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger32">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger32">
       <joint>RHand</joint>
       <mimicJoint>RFinger32</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger33">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger33">
       <joint>RHand</joint>
       <mimicJoint>RFinger33</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger41">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger41">
       <joint>RHand</joint>
       <mimicJoint>RFinger41</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger42">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger42">
       <joint>RHand</joint>
       <mimicJoint>RFinger42</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_RFinger43">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="mimic_RFinger43">
       <joint>RHand</joint>
       <mimicJoint>RFinger43</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="LThumb1">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="LThumb1">
       <joint>LHand</joint>
       <mimicJoint>LThumb1</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="LThumb2">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="LThumb2">
       <joint>LHand</joint>
       <mimicJoint>LThumb2</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="RThumb1">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="RThumb1">
       <joint>RHand</joint>
       <mimicJoint>RThumb1</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="RThumb2">
+    <plugin filename="libpepper_gazebo_mimic_joint_plugin.so" name="RThumb2">
       <joint>RHand</joint>
       <mimicJoint>RThumb2</mimicJoint>
       <multiplier>-0.785398163398</multiplier>
       <offset>0.785398163398</offset>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger11_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger11_link">
       <link>LFinger11_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger12_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger12_link">
       <link>LFinger12_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger13_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger13_link">
       <link>LFinger13_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger21_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger21_link">
       <link>LFinger21_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger22_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger22_link">
       <link>LFinger22_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger23_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger23_link">
       <link>LFinger23_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger31_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger31_link">
       <link>LFinger31_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger32_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger32_link">
       <link>LFinger32_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger33_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger33_link">
       <link>LFinger33_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger41_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger41_link">
       <link>LFinger41_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger42_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger42_link">
       <link>LFinger42_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LFinger43_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LFinger43_link">
       <link>LFinger43_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LThumb1_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LThumb1_link">
       <link>LThumb1_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="LThumb2_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="LThumb2_link">
       <link>LThumb2_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="l_gripper">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="l_gripper">
       <link>l_gripper</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger11_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger11_link">
       <link>RFinger11_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger12_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger12_link">
       <link>RFinger12_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger13_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger13_link">
       <link>RFinger13_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger21_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger21_link">
       <link>RFinger21_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger22_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger22_link">
       <link>RFinger22_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger23_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger23_link">
       <link>RFinger23_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger31_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger31_link">
       <link>RFinger31_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger32_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger32_link">
       <link>RFinger32_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger33_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger33_link">
       <link>RFinger33_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger41_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger41_link">
       <link>RFinger41_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger42_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger42_link">
       <link>RFinger42_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RFinger43_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RFinger43_link">
       <link>RFinger43_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RThumb1_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RThumb1_link">
       <link>RThumb1_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="RThumb2_link">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="RThumb2_link">
       <link>RThumb2_link</link>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_disable_link_plugin.so" name="r_gripper">
+    <plugin filename="libpepper_gazebo_disable_link_plugin.so" name="r_gripper">
       <link>r_gripper</link>
     </plugin>
   </gazebo>
@@ -1931,7 +1931,7 @@
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <gazebo reference="WheelFL_link">
-    <mu1>1</mu1>
+    <mu1>0.2</mu1>
     <mu2>0</mu2>
     <kp value="10000000.0"/>
     <kd value="1.0"/>
@@ -1940,8 +1940,8 @@
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <gazebo reference="WheelB_link">
-    <mu1>0.5</mu1>
-    <mu2>0.5</mu2>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
     <kp value="10000000.0"/>
     <kd value="1.0"/>
     <fdir1 value="1 0 0"/>
@@ -1950,7 +1950,7 @@
   </gazebo>
   <gazebo reference="WheelFR_link">
     <mu1>0</mu1>
-    <mu2>1</mu2>
+    <mu2>0.2</mu2>
     <kp value="10000000.0"/>
     <kd value="1.0"/>
     <fdir1 value="0 1 0"/>
@@ -2065,7 +2065,7 @@
         </noise>
       </camera>
       <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
-        <robotNamespace>/pepper_robot</robotNamespace>
+        <robotNamespace>/maqui</robotNamespace>
         <alwaysOn>true</alwaysOn>
         <updateRate>5.0</updateRate>
         <cameraName>camera/front</cameraName>
@@ -2102,7 +2102,7 @@
         </noise>
       </camera>
       <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
-        <robotNamespace>/pepper_robot</robotNamespace>
+        <robotNamespace>/maqui</robotNamespace>
         <alwaysOn>true</alwaysOn>
         <updateRate>5.0</updateRate>
         <cameraName>camera/bottom</cameraName>
@@ -2137,7 +2137,7 @@
       <plugin filename="libgazebo_ros_openni_kinect.so" name="CameraDepth_frame_controller">
         <alwaysOn>true</alwaysOn>
         <updateRate>20.0</updateRate>
-        <cameraName>pepper_robot/camera</cameraName>
+        <cameraName>/maqui/camera</cameraName>
         <imageTopicName>ir/image_raw</imageTopicName>
         <cameraInfoTopicName>depth/camera_info</cameraInfoTopicName>
         <depthImageTopicName>depth/image_raw</depthImageTopicName>
@@ -2258,7 +2258,7 @@
         </range>
       </ray>
       <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-        <robotNamespace>/pepper_robot</robotNamespace>
+        <robotNamespace>/maqui</robotNamespace>
         <gaussianNoise>0.05</gaussianNoise>
         <alwaysOn>true</alwaysOn>
         <updateRate>20</updateRate>
@@ -2298,7 +2298,7 @@
         </range>
       </ray>
       <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-        <robotNamespace>/pepper_robot</robotNamespace>
+        <robotNamespace>/maqui</robotNamespace>
         <gaussianNoise>0.05</gaussianNoise>
         <alwaysOn>true</alwaysOn>
         <updateRate>20</updateRate>
@@ -2312,21 +2312,137 @@
     </sensor>
   </gazebo>
   <!-- Drive controller -->
+  <!--Original drive controller from Aldebaran-->
+  <!--<gazebo>
+      <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100</updateRate>
+        <robotNamespace>/</robotNamespace>
+        <leftJoint>WheelFL</leftJoint>
+        <rightJoint>WheelFR</rightJoint>
+        <wheelSeparation>0.170</wheelSeparation>
+        <wheelDiameter>0.140</wheelDiameter>
+        <torque>36.9</torque>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom_diffdrive</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+      </plugin>
+    </gazebo>
+-->
+  <!-- Custom base plugin Documentation at https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/blob/indigo-devel/hector_gazebo_plugins/src/gazebo_ros_force_based_move.cpp -->
   <gazebo>
-    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>100</updateRate>
-      <robotNamespace>/</robotNamespace>
-      <leftJoint>WheelFL</leftJoint>
-      <rightJoint>WheelFR</rightJoint>
-      <wheelSeparation>0.170</wheelSeparation>
-      <wheelDiameter>0.140</wheelDiameter>
-      <torque>36.9</torque>
+    <plugin filename="libpepper_gazebo_ros_force_omni_base.so" name="base_drive_controller">
+      <robotNamespace>/maqui</robotNamespace>
       <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom_diffdrive</odometryTopic>
+      <odometryTopic>odom</odometryTopic>
+      <publishOdometryTf>true</publishOdometryTf>
       <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>Tibia</robotBaseFrame>
+      <yaw_velocity_p_gain>500.0</yaw_velocity_p_gain>
+      <yaw_velocity_i_gain>300.0</yaw_velocity_i_gain>
+      <x_velocity_p_gain>1000.0</x_velocity_p_gain>
+      <x_velocity_i_gain>300.0</x_velocity_i_gain>
+      <y_velocity_p_gain>1000.0</y_velocity_p_gain>
+      <y_velocity_i_gain>300.0</y_velocity_i_gain>
+      <max_torque>8.0</max_torque>
+      <max_force>50.0</max_force>
     </plugin>
+  </gazebo>
+  <!-- Lasers sensors -->
+  <gazebo reference="SurroundingRightLaser_device_frame">
+    <sensor name="laser_sensor_right" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>15</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.515</min_angle>
+            <max_angle>0.515</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>1.5</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_laser_sensor_right_plugin">
+        <topicName>/maqui/laser/right</topicName>
+        <frameName>SurroundingRightLaser_device_frame</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="SurroundingLeftLaser_device_frame">
+    <sensor name="laser_sensor_left" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>15</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.515</min_angle>
+            <max_angle>0.515</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>1.5</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_laser_sensor_left_plugin">
+        <topicName>/maqui/laser/left</topicName>
+        <frameName>SurroundingLeftLaser_device_frame</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="SurroundingFrontLaser_device_frame">
+    <sensor name="laser_sensor_front" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>15</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.515</min_angle>
+            <max_angle>0.515</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>1.5</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_laser_sensor_front_plugin">
+        <topicName>/maqui/laser/front</topicName>
+        <frameName>SurroundingFrontLaser_device_frame</frameName>
+      </plugin>
+    </sensor>
   </gazebo>
   <!-- HEAD -->
   <transmission name="HeadYaw_Transmission">
@@ -2542,3 +2658,4 @@
     </actuator>
   </transmission>
 </robot>
+
