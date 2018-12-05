@@ -757,7 +757,7 @@
             <y_velocity_p_gain>1000.0</y_velocity_p_gain>
             <y_velocity_i_gain>300.0</y_velocity_i_gain>
             <max_torque>8.0</max_torque>
-            <max_force>50.0</max_force>
+            <max_force>3000.0</max_force>
         </plugin>
     </gazebo>
     <!-- Lasers sensors -->
