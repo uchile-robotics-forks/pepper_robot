@@ -42,7 +42,8 @@
 	</joint>
 	<link name="Tibia">
 		<inertial>
-			<mass value="11.6015"/>
+			<mass value="11.6015"/> <!--original mass-->
+			<!--mass value="100"/--> <!-- bigger mass to avoid falls-->
 			<inertia ixx="0.129229" ixy="-0.000401943" ixz="0.00048556" iyy="0.122839" iyz="-1.01666e-08" izz="0.108168"/>
 			<origin rpy="0 0 0" xyz="0.00220451 0 -0.185729"/>
 		</inertial>

@@ -110,7 +110,8 @@
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFL_0.10.stl" scale="0.1 0.1 0.1"/>
+				<!--mesh filename="package://pepper_meshes/meshes/1.0/WheelFL_0.10.stl" scale="0.1 0.1 0.1"/-->
+				<sphere radius="0.09"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -250,7 +251,8 @@
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/KneePitch_0.10.stl" scale="0.1 0.1 0.1"/>
+				<cylinder length="0.05" radius="0.1"/>
+				<!--mesh filename="package://pepper_meshes/meshes/1.0/KneePitch_0.10.stl" scale="0.1 0.1 0.1"/-->
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -460,7 +462,8 @@
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelB_0.10.stl" scale="0.1 0.1 0.1"/>
+				<!--mesh filename="package://pepper_meshes/meshes/1.0/WheelB_0.10.stl" scale="0.1 0.1 0.1"/-->  <!-- wheels of radius 0.14 meter-->
+				<sphere radius="0.09"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
@@ -628,7 +631,8 @@
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="package://pepper_meshes/meshes/1.0/WheelFR_0.10.stl" scale="0.1 0.1 0.1"/>
+				<!--mesh filename="package://pepper_meshes/meshes/1.0/WheelFR_0.10.stl" scale="0.1 0.1 0.1"/-->
+				<sphere radius="0.09"/>
 			</geometry>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 		</collision>
